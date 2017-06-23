@@ -32,9 +32,7 @@ public class HitCountService {
 		
 		ResponseBean responseBean = new ResponseBean();
 		responseBean.setCalls(++count);
-		responseBean.setTimestamp(ZonedDateTime.now( ZoneId.systemDefault() )
-		        .truncatedTo( ChronoUnit.MINUTES )
-		        .format( DateTimeFormatter.ISO_DATE_TIME ));
+		responseBean.setTimestamp(ZonedDateTime.now().format(DateTimeFormatter.ISO_INSTANT));
 		
 		return responseBean;
 	}
